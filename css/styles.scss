@@ -40,11 +40,6 @@ body {
 
   img.bg-mobile {
     display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: auto;
   }
 }
 
@@ -61,11 +56,13 @@ main {
   @include bodyPad(0);
   position: relative;
   display: flex;
+  flex-wrap: wrap;
 
   .text-div {
+    flex: 1 1 500px;
     padding: 5rem;
     h2 {
-        color: white;
+      color: white;
       text-transform: capitalize;
       font-family: "Poppins", sans-serif;
       font-weight: 600;
@@ -89,12 +86,15 @@ main {
       font-weight: 400;
       padding: 1rem 6rem;
       border-radius: 30px;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
       &:hover {
-          color: white;
-          background-color: color(soft-magenta);
+        color: white;
+        background-color: color(soft-magenta);
       }
     }
+  }
+  .image-div {
+    flex: 1 1 500px;
   }
 }
 
@@ -118,9 +118,9 @@ footer {
       align-items: center;
       border-radius: 50%;
       cursor: pointer;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
       i {
-          transition: all .2s ease;
+        transition: all 0.2s ease;
         color: white;
       }
 
@@ -129,12 +129,72 @@ footer {
         color: color(soft-magenta);
 
         i {
-            color: color(soft-magenta);
+          color: color(soft-magenta);
         }
       }
     }
     .middle-icon {
       margin: 0 3rem;
+    }
+  }
+}
+
+@media (max-width: 1343px) {
+  html {
+    font-size: 45%;
+  }
+  body {
+    img.bg-desktop {
+      display: none;
+    }
+
+    img.bg-mobile {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100vw;
+      height: auto;
+    }
+  }
+
+  header {
+    padding: 5rem 10vw;
+  }
+
+  main {
+    padding: 0 10vw;
+    .text-div {
+      text-align: center;
+      padding: 10rem 0 0;
+      h2 {
+        font-size: 4rem - 0.2rem;
+      }
+      p {
+        margin: 2rem 0 8rem;
+      }
+
+      a {
+        padding: 1rem 13rem;
+        font-size: 2.5rem;
+      }
+    }
+    .image-div {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  footer {
+      position: relative;
+      top: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .social {
+      position: static;
     }
   }
 }

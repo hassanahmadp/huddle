@@ -30,11 +30,6 @@ body img.bg-desktop {
 
 body img.bg-mobile {
   display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: auto;
 }
 
 header {
@@ -53,9 +48,14 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 main .text-div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 500px;
+          flex: 1 1 500px;
   padding: 5rem;
 }
 
@@ -84,13 +84,19 @@ main .text-div a {
   font-weight: 400;
   padding: 1rem 6rem;
   border-radius: 30px;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 main .text-div a:hover {
   color: white;
   background-color: #e882e8;
+}
+
+main .image-div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 500px;
+          flex: 1 1 500px;
 }
 
 footer {
@@ -125,13 +131,13 @@ footer .social .social-icon {
           align-items: center;
   border-radius: 50%;
   cursor: pointer;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 footer .social .social-icon i {
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
   color: white;
 }
 
@@ -146,5 +152,64 @@ footer .social .social-icon:hover i {
 
 footer .social .middle-icon {
   margin: 0 3rem;
+}
+
+@media (max-width: 1343px) {
+  html {
+    font-size: 45%;
+  }
+  body img.bg-desktop {
+    display: none;
+  }
+  body img.bg-mobile {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    height: auto;
+  }
+  header {
+    padding: 5rem 10vw;
+  }
+  main {
+    padding: 0 10vw;
+  }
+  main .text-div {
+    text-align: center;
+    padding: 10rem 0 0;
+  }
+  main .text-div h2 {
+    font-size: 3.8rem;
+  }
+  main .text-div p {
+    margin: 2rem 0 8rem;
+  }
+  main .text-div a {
+    padding: 1rem 13rem;
+    font-size: 2.5rem;
+  }
+  main .image-div {
+    width: 100%;
+  }
+  main .image-div img {
+    width: 100%;
+  }
+  footer {
+    position: relative;
+    top: 8rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer .social {
+    position: static;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
