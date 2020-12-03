@@ -1,106 +1,140 @@
-$colors:(
-    violet-color: hsl(257, 40%, 49%),
-    soft-magenta: hsl(300, 69%, 71%),
+$colors: (
+  violet-color: hsl(257, 40%, 49%),
+  soft-magenta: hsl(300, 69%, 71%),
 );
 
 @function color($color) {
-    @return map-get($colors, $color);
+  @return map-get($colors, $color);
 }
 
 @mixin bodyPad($horiz) {
-    padding: $horiz 5vw;
+  padding: $horiz 5vw;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: white;
-    &:focus {
-        outline: none;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+  }
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    background-color: color(violet-color);
-    z-index: -1;
-    img.bg-desktop {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        // height: 100vh;
-    }
+  background-color: color(violet-color);
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  img.bg-desktop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    // height: 100vh;
+  }
 
-    img.bg-mobile {
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: auto;
-    }
+  img.bg-mobile {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+  }
 }
 
 header {
-    position: relative;
-    @include bodyPad(5rem);
-    padding-bottom: 2rem;
-    img {
-        height: 6rem;
-    }
+  position: relative;
+  @include bodyPad(5rem);
+  padding-bottom: 5rem;
+  img {
+    height: 6rem;
+  }
 }
 
 main {
-    @include bodyPad(0);
-    position: relative;
-    display: flex;
+  @include bodyPad(0);
+  position: relative;
+  display: flex;
 
-    .text-div {
-        padding: 5rem;
-        h2 {
-            text-transform: capitalize;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            font-size: 3.5rem;
-        }
-        p {
-            // padding-right: .5rem;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 400;
-            color: lighten(color(violet-color), 40%);
-            font-size: 1.7rem;
-            margin: 2rem 0 3rem;
-        }
-
-        a {
-            text-decoration: none;
-            font-size: 2rem;
-            background-color: white;
-            color: color(violet-color);
-            font-family: 'Poppins', sans-serif;
-            font-weight: 400;
-            padding: 1rem 6rem;
-            border-radius: 30px;
-        }
+  .text-div {
+    padding: 5rem;
+    h2 {
+        color: white;
+      text-transform: capitalize;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 4rem;
     }
+    p {
+      // padding-right: .5rem;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 400;
+      color: lighten(color(violet-color), 40%);
+      font-size: 1.7rem;
+      margin: 2rem 0 3rem;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 2rem;
+      background-color: white;
+      color: color(violet-color);
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      padding: 1rem 6rem;
+      border-radius: 30px;
+      transition: all .2s ease;
+      &:hover {
+          color: white;
+          background-color: color(soft-magenta);
+      }
+    }
+  }
 }
 
 footer {
-    width: 90vw;
-    margin: 1rem auto 2rem;
-    padding-bottom: 2rem;
-    position: relative;
-    .social {
-        position: absolute;
-        top: 0;
-        right: 0;
-        .social-icon {
-            font-size: 2rem;
+  width: 90vw;
+  margin: 1rem auto 2rem;
+  padding-bottom: 2rem;
+  position: relative;
+  .social {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    .social-icon {
+      font-size: 2.5rem;
+      height: 6rem;
+      width: 6rem;
+      border: 2px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all .2s ease;
+      i {
+          transition: all .2s ease;
+        color: white;
+      }
+
+      &:hover {
+        border: 2px solid color(soft-magenta);
+        color: color(soft-magenta);
+
+        i {
+            color: color(soft-magenta);
         }
+      }
     }
+    .middle-icon {
+      margin: 0 3rem;
+    }
+  }
 }

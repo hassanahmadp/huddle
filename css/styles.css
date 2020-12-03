@@ -3,7 +3,6 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  color: white;
 }
 
 *:focus {
@@ -17,6 +16,9 @@ html {
 body {
   background-color: #674baf;
   z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 body img.bg-desktop {
@@ -38,7 +40,7 @@ body img.bg-mobile {
 header {
   position: relative;
   padding: 5rem 5vw;
-  padding-bottom: 2rem;
+  padding-bottom: 5rem;
 }
 
 header img {
@@ -58,14 +60,15 @@ main .text-div {
 }
 
 main .text-div h2 {
+  color: white;
   text-transform: capitalize;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 3.5rem;
+  font-size: 4rem;
 }
 
 main .text-div p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   color: #ded8ee;
   font-size: 1.7rem;
@@ -77,10 +80,17 @@ main .text-div a {
   font-size: 2rem;
   background-color: white;
   color: #674baf;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   padding: 1rem 6rem;
   border-radius: 30px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+main .text-div a:hover {
+  color: white;
+  background-color: #e882e8;
 }
 
 footer {
@@ -91,12 +101,50 @@ footer {
 }
 
 footer .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
   top: 0;
   right: 0;
 }
 
 footer .social .social-icon {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  height: 6rem;
+  width: 6rem;
+  border: 2px solid white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+footer .social .social-icon i {
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  color: white;
+}
+
+footer .social .social-icon:hover {
+  border: 2px solid #e882e8;
+  color: #e882e8;
+}
+
+footer .social .social-icon:hover i {
+  color: #e882e8;
+}
+
+footer .social .middle-icon {
+  margin: 0 3rem;
 }
 /*# sourceMappingURL=styles.css.map */
