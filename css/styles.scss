@@ -1,3 +1,12 @@
+$colors:(
+    violet-color: hsl(257, 40%, 49%),
+    soft-magenta: hsl(300, 69%, 71%),
+);
+
+@function color($color) {
+    @return map-get($colors, $color);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +14,5 @@
 }
 
 body {
-    background-color: black;
-    color: white;
+    background-color: color(violet-color);
 }
