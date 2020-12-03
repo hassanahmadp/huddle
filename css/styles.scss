@@ -7,6 +7,10 @@ $colors:(
     @return map-get($colors, $color);
 }
 
+@mixin bodyPad($horiz) {
+    padding: $horiz 5vw;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -15,4 +19,8 @@ $colors:(
 
 body {
     background-color: color(violet-color);
+}
+
+header {
+    @include bodyPad(2rem);
 }
