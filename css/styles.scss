@@ -15,12 +15,73 @@ $colors:(
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: white;
+}
+
+html {
+    font-size: 62.5%;
 }
 
 body {
     background-color: color(violet-color);
+    z-index: -1;
+    img.bg-desktop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        // height: 100vh;
+    }
+
+    img.bg-mobile {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: auto;
+    }
 }
 
 header {
-    @include bodyPad(2rem);
+    position: relative;
+    @include bodyPad(5rem);
+    img {
+        height: 6rem;
+    }
+}
+
+main {
+    @include bodyPad(0);
+    position: relative;
+    display: flex;
+
+    .text-div {
+        padding: 5rem;
+        h2 {
+            text-transform: capitalize;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 3.5rem;
+        }
+        p {
+            // padding-right: .5rem;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            color: lighten(color(violet-color), 40%);
+            font-size: 1.7rem;
+            margin: 2rem 0;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 2rem;
+            background-color: white;
+            color: color(violet-color);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            padding: 1rem 6rem;
+            border-radius: 30px;
+        }
+    }
 }
