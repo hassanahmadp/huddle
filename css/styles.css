@@ -34,6 +34,7 @@ body img.bg-mobile {
 header {
   position: relative;
   padding: 5rem 5vw;
+  padding-bottom: 2rem;
 }
 
 header img {

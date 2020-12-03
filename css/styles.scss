@@ -46,6 +46,7 @@ body {
 header {
     position: relative;
     @include bodyPad(5rem);
+    padding-bottom: 2rem;
     img {
         height: 6rem;
     }
