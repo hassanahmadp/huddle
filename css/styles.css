@@ -17,8 +17,8 @@ body {
   background-color: #674baf;
   z-index: -1;
   width: 100vw;
+  overflow-x: hidden;
   height: 100vh;
-  overflow: hidden;
 }
 
 body img.bg-desktop {
@@ -48,14 +48,12 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 main .text-div {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 500px;
-          flex: 1 1 500px;
+      -ms-flex: 1 1 600px;
+          flex: 1 1 600px;
   padding: 5rem;
 }
 
@@ -86,6 +84,8 @@ main .text-div a {
   border-radius: 30px;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  -webkit-box-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.35);
+          box-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.35);
 }
 
 main .text-div a:hover {
@@ -95,8 +95,8 @@ main .text-div a:hover {
 
 main .image-div {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 500px;
-          flex: 1 1 500px;
+      -ms-flex: 1 1 600px;
+          flex: 1 1 600px;
 }
 
 footer {
@@ -155,9 +155,6 @@ footer .social .middle-icon {
 }
 
 @media (max-width: 1343px) {
-  html {
-    font-size: 45%;
-  }
   body img.bg-desktop {
     display: none;
   }
@@ -173,6 +170,8 @@ footer .social .middle-icon {
     padding: 5rem 10vw;
   }
   main {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     padding: 0 10vw;
   }
   main .text-div {
@@ -210,6 +209,12 @@ footer .social .middle-icon {
   }
   footer .social {
     position: static;
+  }
+}
+
+@media (max-width: 525px) {
+  html {
+    font-size: 45%;
   }
 }
 /*# sourceMappingURL=styles.css.map */
